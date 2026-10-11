@@ -41,7 +41,7 @@ Railway convient au fonctionnement serveur de JobAroundMe : l’application rest
 1. Poussez ce dépôt sur GitHub, créez un projet Railway depuis ce dépôt et choisissez la région d’Amsterdam.
 2. Pour un essai familial, commencez avec le plan Free, un seul replica et le mode Serverless activé afin que le service s’arrête lorsqu’il n’est pas utilisé. Le premier accès après une veille peut demander un rechargement. Si les 512 Mo du plan Free ou ses crédits d’usage deviennent insuffisants, passez au plan Hobby sans modifier l’application.
 3. Ajoutez `RAILPACK_NODE_VERSION=24` et `RAILPACK_DEPLOY_APT_PACKAGES=util-linux` afin d’utiliser Node.js 24 et d’activer les limites noyau du lecteur PDF.
-4. Ajoutez les variables de `.env.example`. Les trois identifiants à fournir sont `GOOGLE_MAPS_SERVER_API_KEY`, `NEXT_PUBLIC_GOOGLE_MAPS_BROWSER_API_KEY` et `LBA_API_KEY`. Ne les ajoutez jamais au dépôt.
+4. Ajoutez les variables de `.env.example`. Les trois identifiants à fournir sont `GOOGLE_MAPS_SERVER_API_KEY`, `NEXT_PUBLIC_GOOGLE_MAPS_BROWSER_API_KEY` et `LBA_API_KEY`. Sur l’instance Free de 512 Mo, utilisez d’abord `SEARCH_MAX_CONCURRENT_SEARCHES=2`; la valeur 6 convient mieux à une instance disposant d’au moins 1 Gio. Ne placez jamais les identifiants dans le dépôt.
 5. Laissez `TRUSTED_CLIENT_IP_HEADER` non défini tant que le proxy d’entrée n’a pas été vérifié comme supprimant puis remplaçant cet en-tête.
 6. Déployez, puis vérifiez `/api/health`. Une modification de la clé navigateur Google doit déclencher un nouveau build complet.
 
